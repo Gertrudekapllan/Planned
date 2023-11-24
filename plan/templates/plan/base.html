@@ -1,0 +1,18 @@
+{#{% if user.is_authenticated %}#}
+{#    Logged In as {{ user.username }}#}
+{#    <a href="#">Logout</a>#}
+{#{% else %}#}
+{#    <a href="#">Sign Up</a>#}
+{#    <a href="#">Login</a>#}
+{#{% endif %}#}
+<html>
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel='stylesheet' href='{% static 'style.css' %}' type='text/css'>
+</head>
+<body>
+ {% include 'plan/user-logged.html' %}
+{% block content %}{% endblock content %}
+</body>
+</html>

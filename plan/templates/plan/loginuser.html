@@ -1,0 +1,14 @@
+{% extends 'plan/base.html' %}
+{% block content %}
+    <h1 class="page-header">Sign Up</h1>
+    <h1 class="page-header-error">{{ errorUA }}</h1>
+    <div class="content">
+        <div class="signup-form">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_div }}
+                <button type="submit" class="signup-form-submit">LOG IN</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

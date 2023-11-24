@@ -1,0 +1,12 @@
+{#{% extends 'plan/base.html' %}#}
+{% block user-logged %}
+    {% if user.is_authenticated %}
+        Logged In as {{ user.username }}
+        <form action="{% url 'logoutuser'%}" method="post">
+                {% csrf_token %}
+                <button type="submit">logout</button></form>
+    {% else %}
+        <a href="{% url 'signupuser'%}">Sign Up</a>
+        <a href="{% url 'loginuser'%}">Login</a>
+    {% endif %}
+{% endblock user-logged %}
